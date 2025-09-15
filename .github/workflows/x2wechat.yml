@@ -1,0 +1,31 @@
+name: X to WeChat Monitor
+
+  on:
+    schedule:
+      - cron: '*/10 * * * *'
+    workflow_dispatch:
+
+  jobs:
+    monitor:
+      runs-on: ubuntu-latest
+      steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Run X2WeChat
+        env:
+          SERVERCHAN_SENDKEY: ${{ secrets.SERVERCHAN_SENDKEY }}
+        run: python x2wechat.py --once
+
+      - name: Commit state changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add state.json || true
+          git diff --staged --quiet || git commit -m "Update state [skip ci]" || true
+          git push || true
