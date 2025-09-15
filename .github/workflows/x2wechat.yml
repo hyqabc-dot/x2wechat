@@ -1,4 +1,4 @@
-name: X to WeChat Monitor
+  name: X to WeChat Monitor
 
   on:
     schedule:
