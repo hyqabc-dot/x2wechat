@@ -1,0 +1,34 @@
+{
+  "users": [
+    "poyincom",
+    "didengshengwu",
+    "0427SMtieshou",
+    "Svwang1",
+    "cnfinancewatch",
+    "elonmusk"
+  ],
+  "nitter_instances": [
+    "https://nitter.it",
+    "https://nitter.eu",
+    "https://twiiit.com",
+    "https://nitter.unixfox.eu",
+    "https://nitter.domain.glass",
+    "https://nitter.1d4.us",
+    "https://nitter.kavin.rocks",
+    "https://nitter.fdn.fr",
+    "https://nitter.namazso.eu",
+    "https://nitter.hu",
+    "https://bird.habedieeh.re",
+    "https://nitter.net",
+    "https://nitter.poast.org",
+    "https://nitter.privacydev.net",
+    "https://n.ramle.be",
+    "https://nitter.nixnet.services"
+  ],
+  "push": {
+    "method": "serverchan",
+    "serverchan_sendkey": "FROM_ENV"
+  },
+  "state_file": "state.json",
+  "interval_seconds": 600
+}
